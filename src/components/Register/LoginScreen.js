@@ -22,7 +22,11 @@ function LoginScreen() {
     <div className="loginScreen">
       <div className="">
         <img
-          onClick={() => history.push("/")}
+          onClick={() => {
+            setSignIn(false);
+            setShowSignInButton(true);
+            history.push("/");
+          }}
           className="fixed left-0 w-36 object-contain pl-5 cursor-pointer"
           src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
           alt=""
@@ -42,7 +46,7 @@ function LoginScreen() {
         <div className="loginScreen__gradient"></div>
       </div>
 
-      <div className="absolute left-0 right-0 top-14 z-10 text-white text-center mx-auto p-5">
+      <div className="absolute left-0 right-0 top-24 z-10 text-white text-center mx-auto p-5">
         {signIn ? (
           <SignupScreen />
         ) : (
